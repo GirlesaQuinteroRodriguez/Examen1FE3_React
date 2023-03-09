@@ -14,7 +14,7 @@ const Form = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (user.nombre.length > 3 && user.nombre !== "" && user.libro.length > 6) {
+        if (isUsernameValid && user.libro.length > 6) {
             setShow(true)
             setErr(false)
         } else {
@@ -23,8 +23,18 @@ const Form = () => {
         }
     }
 
+    const validateUserName = () => { 
+        const withoutSpaces = user.nombre.trim();
+        if (withoutSpaces.length > 2) {
+          return true;
+        } else {
+          return false;
+       } };
+
+    const isUsernameValid = validateUserName()
+
     return (
-        <div>
+        <div className='formulario'>
             <form onSubmit={handleSubmit}>
                 <label >Nombre</label>
                 <input type="text" value={user.nombre} onChange={(e) => setUser({...user, nombre: e.target.value})} />

@@ -34,10 +34,26 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-shadow:(0 0 2em #e4fb61aa)
 }
 
+form {
+  padding: 3em;
+   display: flex;
+   flex-direction: column;
+}
+
+form>label {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+
+
 button {
-  border-radius: 8px;
+  margin: 2em;
+  border-radius: 50px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
